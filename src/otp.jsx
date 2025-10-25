@@ -19,6 +19,7 @@ const [spin, setSpin] = useState(false);
 useEffect(()=>{
 const email = localStorage.getItem('email');
 setEmail(email);
+alert("Check your spam if you dont see on refresh");
 }, [])
 
 
