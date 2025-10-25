@@ -62,11 +62,11 @@ axios.post('https://login-backend-izl3.onrender.com/reg/register',FormData)
    
 })
 .catch(err => {
-    if(err.response.status === 409){
+    if(err.response?.status === 409){
         alert('User already exists enter new Credentials');
         navigate('/');
     }
-    else if(err.response.status === 400){
+    else if(err.response?.status === 400){
         alert('passwords dont match');
     }
     setload(false);
