@@ -1,0 +1,51 @@
+.message {
+  position: fixed;
+  top: 20px;
+  right: 500px;
+  background: #4caf50;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 40px 40px rgba(4, 13, 1, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+@media (max-width: 1023px) and (min-width: 720px){
+  .message{
+    right: 300px;
+  }
+}
+@media (max-width: 1440px) and (min-width: 1024px){
+  .message{
+    right: 450px;
+  }
+}
+
+
+
+
+
+@media (max-width: 700px){
+  .message{
+    right: 200px;
+  }
+}
+
+@media (max-width: 470px){
+  .message{
+    right: 80px;
+  }
+}
+
+

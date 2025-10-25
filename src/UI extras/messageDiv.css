@@ -1,0 +1,33 @@
+.messageDiv {
+  position: fixed;
+  top: 20px;
+  right: 500px;
+  background: #e34343;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 40px 40px rgba(4, 13, 1, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.messageDiv.showDiv {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+@media (max-width: 1024px){
+  .messageDiv{
+    right: 290px;
+  }
+}
+
+@media (max-width: 425px){
+  .messageDiv{
+    right: 100px;
+  }
+}
