@@ -3,7 +3,7 @@ import './log.css';
 import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import  TokenContext  from './accessContext/tokenContext';
-
+import { Spinner } from './UI extras/Spinner';
 
 function Login({ settertoken }){
 const {accessToken, setAccess} = useContext(TokenContext);
@@ -12,6 +12,7 @@ const [loginData, setLoginData] = useState({
     email: "",
     password: ""
 });
+const [load, setLoad] = useState(false);
 
 
 
@@ -45,6 +46,10 @@ axios.post('https://login-backend-izl3.onrender.com/login/log', loginData, {
   
 })
 }
+
+const handleLoader = () => {
+setLoad(true);
+} 
 
 
     return(<>
@@ -99,7 +104,7 @@ axios.post('https://login-backend-izl3.onrender.com/login/log', loginData, {
                         </div>
                         <a href="#" className="forgot-password">Forgot password?</a>
                     </div>
-                    <button type="submit" className="submit-button">Sign in</button>
+                    <button type="submit" className="submit-button" onClick={handleLoader}>{load ? <Spinner/> : 'Sign in'}</button>
                 </form>
                 <div className="signup-section">
                     <p className="signup-text">
